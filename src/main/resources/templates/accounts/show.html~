@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8" />
+    <title>Show Account</title>
+    <link rel="stylesheet" href="/css/bootstrap.css" />
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>Show Account</h1>
+    <div th:object="${account}">
+        <div>
+            <label>ID</label>
+            <p th:text="*{id}"></p>
+        </div>
+        <div>
+            <label>Name</label>
+            <p th:text="*{name}"></p>
+        </div>
+        <div>
+            <label>Role</label>
+            <p th:text="*{role}"></p>
+        </div>
+    </div>
+    <div>
+        <a class="btn btn-default" th:href="@{/accounts/{id}/edit(id=*{id})}">Edit</a>
+    </div>
+    <div class="pull-right">
+        <a class="btn btn-link" href="/accounts">List</a>
+    </div>
+</div>
+</body>
+</html>
